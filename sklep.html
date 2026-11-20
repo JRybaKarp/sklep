@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sklep – Nailchemy</title>
+    <meta name="description" content="Przeglądaj produkty Nailchemy: lakiery hybrydowe, preparaty pielęgnacyjne i akcesoria.">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Style całej strony (jeden wspólny plik) -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Sklep – Nailchemy">
+    <meta property="og:description" content="Przeglądaj produkty Nailchemy: lakiery hybrydowe, preparaty pielęgnacyjne i akcesoria.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&amp;fit=crop&amp;w=1200&amp;q=80">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Sklep – Nailchemy", "description": "Przeglądaj produkty Nailchemy: lakiery hybrydowe, preparaty pielęgnacyjne i akcesoria.", "publisher": {"@type": "Organization", "name": "Nailchemy Sp. z o.o."}}</script>
+</head>
+<body data-page="shop">
+
+    <!-- NAVBAR + panele Kategorie / Koszyk (wstawiane przez js/navbar.js) -->
+    <script src="js/navbar.js"></script>
+
+    <!-- ===== TREŚĆ STRONY ===== -->
+        <div class="container pt-4">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Strona Główna</a></li>
+                    <li class="breadcrumb-item active text-white-50" aria-current="page">Sklep</li>
+                </ol>
+            </nav>
+        </div>
+    
+        <h1 class="visually-hidden">Sklep z kosmetykami do stylizacji paznokci</h1>
+
+    <main class="container py-4">
+            <div class="row g-4">
+                <!-- Panel Filtrów (<aside>) -->
+                <aside class="col-lg-3">
+                    <div class="sticky-summary-box p-4">
+                        <h4 class="h5 text-accent mb-3"><i class="fa-solid fa-filter me-2"></i> Filtry Katalogu</h4>
+                        <div class="mb-4">
+                            <h6 class="text-white mb-2" style="font-size: 0.95rem;">Kategorie</h6>
+                            <div class="form-check mb-2"><input class="form-check-input" type="checkbox" id="c1" data-category="lakiery"><label class="form-check-label text-white-50" for="c1">Lakiery hybrydowe</label></div>
+                            <div class="form-check mb-2"><input class="form-check-input" type="checkbox" id="c2" data-category="bazy"><label class="form-check-label text-white-50" for="c2">Bazy i Topy</label></div>
+                            <div class="form-check mb-2"><input class="form-check-input" type="checkbox" id="c3" data-category="pielegnacja"><label class="form-check-label text-white-50" for="c3">Eliksiry i Oliwki</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" id="c4" data-category="narzedzia"><label class="form-check-label text-white-50" for="c4">Narzędzia i Pędzle</label></div>
+                        </div>
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h6 class="text-white mb-0" style="font-size: 0.95rem;">Cena (PLN)</h6>
+                                <small class="text-accent" id="priceRangePreview">0 – 350 PLN</small>
+                            </div>
+                            <div class="row g-2">
+                                <div class="col-6">
+                                    <label class="form-label text-white-50 small mb-1" for="priceMin">Od</label>
+                                    <input type="number" class="form-control form-control-sm" id="priceMin" value="0" min="0" max="1000" step="1" placeholder="0" aria-label="Cena od">
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label text-white-50 small mb-1" for="priceMax">Do</label>
+                                    <input type="number" class="form-control form-control-sm" id="priceMax" value="350" min="0" max="1000" step="1" placeholder="350" aria-label="Cena do">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <h6 class="text-white mb-2" style="font-size: 0.95rem;">Kolor / Odcień</h6>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="col1" data-color="rose-gold">
+                                <label class="form-check-label text-white-50 d-inline-flex align-items-center gap-2" for="col1">
+                                    <span class="shop-color-dot" style="background: #BF8EA0;"></span> Rose Gold / Pudrowy róż
+                                </label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="col2" data-color="nude">
+                                <label class="form-check-label text-white-50 d-inline-flex align-items-center gap-2" for="col2">
+                                    <span class="shop-color-dot" style="background: #F0DFD5;"></span> Nude / Kremowy
+                                </label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="col3" data-color="gold">
+                                <label class="form-check-label text-white-50 d-inline-flex align-items-center gap-2" for="col3">
+                                    <span class="shop-color-dot" style="background: #D9B061;"></span> Złoty / Bursztynowy
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="col4" data-color="transparent">
+                                <label class="form-check-label text-white-50 d-inline-flex align-items-center gap-2" for="col4">
+                                    <span class="shop-color-dot" style="background: linear-gradient(135deg, rgba(255,255,255,0.7), rgba(191,142,160,0.35));"></span> Transparentny / Naturalny
+                                </label>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <h6 class="text-white mb-2" style="font-size: 0.95rem;">Cechy produktu</h6>
+                            <div class="form-check mb-2"><input class="form-check-input" type="checkbox" id="f1" data-feature="vegan"><label class="form-check-label text-white-50" for="f1">Wegańskie (100%)</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" id="f2" data-feature="new"><label class="form-check-label text-white-50" for="f2">Nowość / Premiera</label></div>
+                        </div>
+                        <div class="shop-filter-actions"><button type="button" class="btn btn-outline-light rounded-pill btn-sm" id="resetShopFilters">Resetuj filtry</button><button type="button" class="btn btn-alchemy-primary rounded-pill btn-sm" id="applyShopFilters">Zastosuj</button></div>
+                    </div>
+                </aside>
+    
+                <!-- Siatka Produktów (<main>) -->
+                <div class="col-lg-9">
+                    <div class="d-flex flex-wrap justify-content-between align-items-center mb-4 p-3 rounded-4" style="background: var(--bg-card); border: 1px solid rgba(191,142,160,0.2);">
+                        <span class="text-white-50" id="shopResultCount" aria-live="polite">Znaleziono <strong>6</strong> produktów w katalogu</span>
+                        <div class="d-flex align-items-center gap-2">
+                            <label class="text-white-50 small">Sortuj:</label>
+                            <select class="form-select form-select-sm w-auto" id="shopSort" aria-label="Sortuj produkty">
+                                <option value="popular">Popularność</option>
+                                <option value="name-asc">Nazwa: A–Z</option>
+                                <option value="name-desc">Nazwa: Z–A</option>
+                                <option value="price-asc">Cena: rosnąco</option>
+                                <option value="price-desc">Cena: malejąco</option>
+                            </select>
+                        </div>
+                    </div>
+    
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="product-card-ecommerce shop-product" data-name="Eliksir Keratynowy #1" data-color="gold" data-category="pielegnacja" data-vegan="true" data-new="false" data-price="75" data-popularity="92">
+                                <div class="product-card-img-wrap"><span class="product-badge-promo">-15%</span><img src="img/21.jpeg" alt="P1"></div>
+                                <div class="product-card-body">
+                                    <div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                                    <h3 class="product-title-ec">Oliwka cherry</h3>
+                                    <div class="product-price-box"><span class="product-current-price">21,25 PLN</span><span class="product-old-price">25,00 PLN</span></div>
+                                    <div class="shop-product-actions">
+                                        <button type="button" class="btn rounded-pill btn-sm" data-add-to-cart="eliksir-keratynowy"><i class="fa-solid fa-cart-plus me-1"></i> Dodaj do koszyka</button>
+                                        <button type="button" class="btn rounded-pill btn-sm" onclick="location.href='produkt.html'">Zobacz szczegóły</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="product-card-ecommerce shop-product" data-name="Lakier Rose Dust" data-color="rose-gold" data-category="lakiery" data-vegan="true" data-new="true" data-price="65" data-popularity="98">
+                                <div class="product-card-img-wrap"><span class="product-badge-promo">Hit</span><img src="img/16.jpg" alt="P2"></div>
+                                <div class="product-card-body">
+                                    <div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></div>
+                                    <h3 class="product-title-ec">Lakier Rose Dust</h3>
+                                    <div class="product-price-box"><span class="product-current-price">35,00 PLN</span></div>
+                                    <div class="shop-product-actions">
+                                        <button type="button" class="btn rounded-pill btn-sm" data-add-to-cart="lakier-rose-dust"><i class="fa-solid fa-cart-plus me-1"></i> Dodaj do koszyka</button>
+                                        <button type="button" class="btn rounded-pill btn-sm" onclick="location.href='produkt.html'">Zobacz szczegóły</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="product-card-ecommerce shop-product" data-name="Baza Mineralna Rose Gold" data-color="rose-gold" data-category="bazy" data-vegan="true" data-new="true" data-price="79" data-popularity="95">
+                                <div class="product-card-img-wrap"><span class="product-badge-promo">Bestseller</span><img src="img/17.jpg" alt="P3"></div>
+                                <div class="product-card-body">
+                                    <div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                                    <h3 class="product-title-ec">Baza Mineralna Rose Gold</h3>
+                                    <div class="product-price-box"><span class="product-current-price">59,00 PLN</span></div>
+                                    <div class="shop-product-actions">
+                                        <button type="button" class="btn rounded-pill btn-sm" data-add-to-cart="baza-mineralna"><i class="fa-solid fa-cart-plus me-1"></i> Dodaj do koszyka</button>
+                                        <button type="button" class="btn rounded-pill btn-sm" onclick="location.href='produkt.html'">Zobacz szczegóły</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="product-card-ecommerce shop-product" data-name="Peeling Enzymatyczny Dłoni" data-color="nude" data-category="pielegnacja" data-vegan="true" data-new="false" data-price="95" data-popularity="82">
+                                <div class="product-card-img-wrap"><img src="img/18.jpg" alt="P4"></div>
+                                <div class="product-card-body">
+                                    <div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></div>
+                                    <h3 class="product-title-ec">Peeling Enzymatyczny Dłoni</h3>
+                                    <div class="product-price-box"><span class="product-current-price">15,00 PLN</span></div>
+                                    <div class="shop-product-actions">
+                                        <button type="button" class="btn rounded-pill btn-sm" data-add-to-cart="peeling-enzymatyczny"><i class="fa-solid fa-cart-plus me-1"></i> Dodaj do koszyka</button>
+                                        <button type="button" class="btn rounded-pill btn-sm" onclick="location.href='produkt.html'">Zobacz szczegóły</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="product-card-ecommerce shop-product" data-name="Pędzelek Fine Art #00" data-color="transparent" data-category="narzedzia" data-vegan="true" data-new="true" data-price="49" data-popularity="76">
+                                <div class="product-card-img-wrap"><img src="img/19.jpg" alt="P5"></div>
+                                <div class="product-card-body">
+                                    <div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                                    <h3 class="product-title-ec">Pędzelek Fine Art #00</h3>
+                                    <div class="product-price-box"><span class="product-current-price">44,00 PLN</span></div>
+                                    <div class="shop-product-actions">
+                                        <button type="button" class="btn rounded-pill btn-sm" data-add-to-cart="pedzelek-fine-art"><i class="fa-solid fa-cart-plus me-1"></i> Dodaj do koszyka</button>
+                                        <button type="button" class="btn rounded-pill btn-sm" onclick="location.href='produkt.html'">Zobacz szczegóły</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="product-card-ecommerce shop-product" data-name="Zestaw Startowy Alchemik" data-color="nude" data-category="bazy" data-vegan="true" data-new="false" data-price="299" data-popularity="99">
+                                <div class="product-card-img-wrap"><span class="product-badge-promo">Zestaw</span><img src="img/20.jpg" alt="P6"></div>
+                                <div class="product-card-body">
+                                    <div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                                    <h3 class="product-title-ec">Zestaw Startowy Alchemik</h3>
+                                    <div class="product-price-box"><span class="product-current-price">299,00 PLN</span></div>
+                                    <div class="shop-product-actions">
+                                        <button type="button" class="btn rounded-pill btn-sm" data-add-to-cart="zestaw-startowy"><i class="fa-solid fa-cart-plus me-1"></i> Dodaj do koszyka</button>
+                                        <button type="button" class="btn rounded-pill btn-sm" onclick="location.href='produkt.html'">Zobacz szczegóły</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <nav aria-label="Paginacja" class="mt-5">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled"><a class="page-link" href="#"><i class="fa-solid fa-chevron-left"></i></a></li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#"><i class="fa-solid fa-chevron-right"></i></a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </main>
+
+    <!-- STOPKA (wstawiana przez js/footer.js) -->
+    <script src="js/footer.js"></script>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Wspólne skrypty (modal powiadomień, helpery) -->
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/shop.js"></script>
+</body>
+</html>

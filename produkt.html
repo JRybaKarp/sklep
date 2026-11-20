@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oliwka cherry</title>
+    <meta name="description" content="Poznaj Eliksir Keratynowy #1 – serum do pielęgnacji i regeneracji paznokci.">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Style całej strony (jeden wspólny plik) -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Eliksir Keratynowy #1 – Nailchemy">
+    <meta property="og:description" content="Poznaj Eliksir Keratynowy #1 – serum do pielęgnacji i regeneracji paznokci.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&amp;fit=crop&amp;w=1200&amp;q=80">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Product", "name": "Eliksir Keratynowy #1", "brand": {"@type": "Brand", "name": "Nailchemy"}, "description": "Serum do pielęgnacji paznokci.", "offers": {"@type": "Offer", "price": "89.00", "priceCurrency": "PLN", "availability": "https://schema.org/InStock"}}</script>
+</head>
+<body data-page="product">
+
+    <!-- NAVBAR + panele Kategorie / Koszyk (wstawiane przez js/navbar.js) -->
+    <script src="js/navbar.js"></script>
+
+    <!-- ===== TREŚĆ STRONY ===== -->
+    <main class="container py-5">
+        <nav aria-label="breadcrumb" class="mb-4">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Strona Główna</a></li>
+                <li class="breadcrumb-item"><a href="sklep.html">Sklep</a></li>
+                <li class="breadcrumb-item active text-white-50" aria-current="page">Oliwka cherry</li>
+            </ol>
+        </nav>
+
+        <div class="row g-5">
+            <!-- Kolumna Wizualna (Galeria) -->
+            <div class="col-lg-6">
+                <div class="mb-3 rounded-4 overflow-hidden border border-secondary" style="height: 420px; background: var(--bg-card);">
+                    <img src="IMG/21.jpeg" alt="Main" class="w-100 h-100 object-fit-cover">
+                </div>
+                <div class="row g-3">
+                    <div class="col-4">
+                        <div class="rounded-3 overflow-hidden border border-secondary" style="height: 100px;">
+                            <img src="IMG/22.jpeg" class="w-100 h-100 object-fit-cover" alt="Kosmetyk do pielęgnacji paznokci">
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="rounded-3 overflow-hidden border border-secondary" style="height: 100px;">
+                            <img src="IMG/23.jpeg" class="w-100 h-100 object-fit-cover" alt="Kolorowy manicure hybrydowy">
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="rounded-3 overflow-hidden border border-secondary" style="height: 100px;">
+                            <img src="IMG/24.jpeg" class="w-100 h-100 object-fit-cover" style="object-position: 75% 60%; transform: scale(1);" alt="KCIUK">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kolumna Zakupowa -->
+            <div class="col-lg-6">
+                <div class="sticky-summary-box">
+                    <span class="badge bg-secondary text-accent border border-primary mb-2">Kategoria: Pielęgnacja</span>
+                    <h1 class="h3 text-accent mb-2">Oliwka cherry</h1>
+                    <p class="text-white-50 small mb-3">Kod produktu: NAIL-CH-01</p>
+
+                    <div class="d-flex align-items-center gap-2 mb-3">
+                        <div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <span class="text-white-50 small">(<span id="ratingSummaryCount">4</span> opinii klientów)</span>
+                    </div>
+
+                    <div class="d-flex align-items-center justify-content-between mb-4 pb-3 border-bottom border-secondary">
+                        <div class="product-price-box mb-0">
+                            <span class="h4 text-accent mb-0">21,25 PLN</span>
+                            <span class="product-old-price">25,00 PLN</span>
+                        </div>
+                        <span class="badge bg-success bg-opacity-25 text-success border border-success px-3 py-2 rounded-pill">W magazynie</span>
+                    </div>
+
+                    <p class="text-white-50 mb-4">Głęboko regenerujące serum do zniszczonej płytki z płynnym złocistym olejem arganowym i bio-keratyną.</p>
+
+                    <div class="mb-3">
+                        <label class="form-label text-accent small fw-bold">Wybierz wariant</label>
+                        <select class="form-select"><option>15 ml (Standard)</option><option>30 ml (Salon)</option></select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label text-accent small fw-bold" for="productQuantityInput">Liczba sztuk</label>
+                        <div class="cart-quantity-control">
+                            <button type="button" class="cart-qty-btn" data-product-qty-btn="minus" aria-label="Zmniejsz ilość">−</button>
+                            <input id="productQuantityInput" type="number" class="cart-quantity-input" value="1" min="1" max="99" data-product-quantity aria-label="Liczba sztuk">
+                            <button type="button" class="cart-qty-btn" data-product-qty-btn="plus" aria-label="Zwiększ ilość">+</button>
+                        </div>
+                    </div>
+                    <button class="btn btn-alchemy-primary w-100 rounded-pill py-3" data-add-to-cart="eliksir-keratynowy">
+                        <i class="fa-solid fa-cart-plus me-2"></i> Dodaj do koszyka
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Zakładki informacyjne -->
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="sticky-summary-box">
+                    <ul class="nav nav-tabs border-bottom border-secondary mb-3" id="pTabs" role="tablist">
+                        <li class="nav-item"><button class="nav-link active text-accent fw-bold" data-bs-toggle="tab" data-bs-target="#tab1" type="button">Pełny opis</button></li>
+                        <li class="nav-item"><button class="nav-link text-white-50 fw-bold" data-bs-toggle="tab" data-bs-target="#tab2" type="button">Specyfikacja</button></li>
+                        <li class="nav-item"><button class="nav-link text-white-50 fw-bold" data-bs-toggle="tab" data-bs-target="#tab3" type="button" id="reviewsTabBtn">Opinie (<span id="reviewsCount">4</span>)</button></li>
+                    </ul>
+                    <div class="tab-content text-white-50">
+                        <div class="tab-pane fade show active" id="tab1">
+                            <h2 class="h5 text-accent mb-2">Odżywka do paznokci Cherry Nails – Regenerujący eliksir wzmacniający płytkę</h2>
+
+                            <p class="text-white mb-2">
+                                <strong>Przywróć swoim paznokciom zdrowy blask, elastyczność i odporność na złamania dzięki skoncentrowanej formule Cherry Nails.</strong>
+                                To profesjonalna kuracja stworzona z myślą o płytce osłabionej po stylizacjach hybrydowych i żelowych, skłonnej do rozdwajania, łamliwości oraz przesuszenia.
+                            </p>
+
+                            <p class="mb-3">
+                                Lekka, szybko wchłaniająca się konsystencja otula paznokieć niewidoczną warstwą ochronną, nadając mu subtelny, zdrowy połysk oraz delikatny, zmysłowy zapach dojrzałej wiśni.
+                            </p>
+
+                            <h3 class="h6 text-accent mb-2">Najważniejsze korzyści:</h3>
+                            <ul class="list-unstyled mb-3">
+                                <li class="mb-1"><i class="fa-solid fa-check text-accent me-2"></i><strong class="text-white">Głęboka regeneracja i odbudowa</strong> – wspiera odbudowę struktury płytki już od pierwszych aplikacji.</li>
+                                <li class="mb-1"><i class="fa-solid fa-check text-accent me-2"></i><strong class="text-white">Wzmocnienie i mniejsza łamliwość</strong> – zwiększa elastyczność paznokci, chroniąc je przed pękaniem i rozdwajaniem.</li>
+                                <li class="mb-1"><i class="fa-solid fa-check text-accent me-2"></i><strong class="text-white">Nawilżenie płytki i skórek</strong> – zapobiega przesuszeniu i zadzieraniu się skórek wokół wału paznokciowego.</li>
+                                <li class="mb-1"><i class="fa-solid fa-check text-accent me-2"></i><strong class="text-white">Naturalny efekt zadbanych dłoni</strong> – nadaje płytce zdrowy, zadbany wygląd i subtelny blask bez efektu obciążenia.</li>
+                                <li class="mb-0"><i class="fa-solid fa-check text-accent me-2"></i><strong class="text-white">Wszechstronne zastosowanie</strong> – idealna zarówno jako samodzielna kuracja regenerująca, jak i odżywcza pielęgnacja pomiędzy kolejnymi stylizacjami.</li>
+                            </ul>
+
+                            <h3 class="h6 text-accent mb-2">Kluczowe składniki aktywne:</h3>
+                            <ul class="list-unstyled mb-3">
+                                <li class="mb-1"><i class="fa-solid fa-sparkles text-accent me-2"></i><strong class="text-white">Ekstrakt z wiśni</strong> – bogaty w antyoksydanty i witaminy, odżywia płytkę oraz przywraca jej witalność i blask.</li>
+                                <li class="mb-1"><i class="fa-solid fa-sparkles text-accent me-2"></i><strong class="text-white">Kompleks witamin (E, B5 / prowitamina B5)</strong> – intensywnie nawilża, wzmacnia i wspiera naturalną barierę ochronną paznokcia.</li>
+                                <li class="mb-0"><i class="fa-solid fa-sparkles text-accent me-2"></i><strong class="text-white">Olejki pielęgnacyjne i składniki wzmacniające</strong> – wygładzają powierzchnię płytki i poprawiają jej sprężystość.</li>
+                            </ul>
+
+                            <h3 class="h6 text-accent mb-2">Sposób użycia:</h3>
+                            <ol class="ps-3 mb-0">
+                                <li class="mb-1"><strong class="text-white">Jako kuracja regenerująca:</strong> Nałóż cienką warstwę odżywki na czystą, suchą i niepomalowaną płytkę paznokcia. Pozostaw do wyschnięcia. Stosuj regularnie co 2–3 dni, zmywając poprzednią warstwę przed kolejną aplikacją.</li>
+                                <li class="mb-0"><strong class="text-white">Jako baza pielęgnacyjna:</strong> Nałóż jedną warstwę pod ulubiony klasyczny lakier do paznokci, aby zabezpieczyć płytkę i przedłużyć trwałość manicure.</li>
+                            </ol>
+                        </div>
+
+                        <div class="tab-pane fade" id="tab2">
+                            <ul class="list-unstyled mb-0">
+                                <li class="py-2 border-bottom border-secondary d-flex justify-content-between"><span>Pojemność:</span> <strong class="text-white">15 ml</strong></li>
+                                <li class="py-2 d-flex justify-content-between gap-3"><span>Skład:</span> <strong class="text-white text-end">Prunus Amygdalus Dulcis Oil, Simmondsia Chinensis Seed Oil, Helianthus Annuus Seed Oil, Vitis Vinifera Seed Oil, Argania Spinosa Kernel Oil, Prunus Cerasus Seed Oil, Prunus Cerasus Fruit Extract, Rosa Canina Fruit Oil, Persea Gratissima Oil, Macadamia Integrifolia Seed Oil, Caprylic/Capric Triglyceride, Squalane, Tocopherol, Tocopheryl Acetate, Bisabolol, Panthenyl Triacetate, Ethylhexyl Palmitate, Parfum, Coumarin, CI 17200</strong></li>
+                            </ul>
+                        </div>
+
+                        <div class="tab-pane fade" id="tab3">
+                            <div id="cherryReviewsList" class="d-flex flex-column gap-3 mb-4">
+                                <div class="p-3 rounded-3" style="background: rgba(30,22,25,0.65); border: 1px solid rgba(191,142,160,0.22);">
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <strong class="text-white">Marta S.</strong>
+                                        <small class="text-white-50">12 marca 2026</small>
+                                    </div>
+                                    <div class="product-rating small mb-2"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                                    <p class="small mb-0">Rewelacyjny produkt! Paznokcie po zdjęciu hybrydy były miękkie i rozdwajające się, a po 2 tygodniach stosowania eliksiru są twarde i gładkie.</p>
+                                </div>
+                                <div class="p-3 rounded-3" style="background: rgba(30,22,25,0.65); border: 1px solid rgba(191,142,160,0.22);">
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <strong class="text-white">Karolina K.</strong>
+                                        <small class="text-white-50">4 marca 2026</small>
+                                    </div>
+                                    <div class="product-rating small mb-2"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                                    <p class="small mb-0">Używam w salonie na zakończenie każdego manicure. Klientki uwielbiają delikatny zapach i szybkie wchłanianie bez tłustego filmu.</p>
+                                </div>
+                                <div class="p-3 rounded-3" style="background: rgba(30,22,25,0.65); border: 1px solid rgba(191,142,160,0.22);">
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <strong class="text-white">Natalia W.</strong>
+                                        <small class="text-white-50">25 lutego 2026</small>
+                                    </div>
+                                    <div class="product-rating small mb-2"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                                    <p class="small mb-0">Buteleczka jest bardzo wydajna, a pipeta pozwala precyzyjnie nałożyć kroplę na wał okołopaznokciowy. Na pewno kupię ponownie.</p>
+                                </div>
+                                <div class="p-3 rounded-3" style="background: rgba(30,22,25,0.65); border: 1px solid rgba(191,142,160,0.22);">
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <strong class="text-white">Aleksandra P.</strong>
+                                        <small class="text-white-50">16 lutego 2026</small>
+                                    </div>
+                                    <div class="product-rating small mb-2"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></div>
+                                    <p class="small mb-0">Bardzo dobry skład i widoczne nawilżenie skórek już po kilku aplikacjach. Wariant 30 ml wychodzi super korzystnie cenowo.</p>
+                                </div>
+                            </div>
+
+                            <div class="p-3 rounded-3" style="background: rgba(30,22,25,0.45); border: 1px solid rgba(191,142,160,0.22);">
+                                <h3 class="h6 text-accent mb-3">Dodaj własną opinię</h3>
+                                <form id="cherryReviewForm" class="row g-2">
+                                    <div class="col-md-6">
+                                        <label for="reviewAuthor" class="form-label small text-white-50 mb-1">Imię lub inicjał</label>
+                                        <input type="text" id="reviewAuthor" class="form-control form-control-sm" placeholder="np. Zuzia M." required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="reviewRating" class="form-label small text-white-50 mb-1">Ocena</label>
+                                        <select id="reviewRating" class="form-select form-select-sm">
+                                            <option value="5" selected>5 gwiazdek</option>
+                                            <option value="4">4 gwiazdki</option>
+                                            <option value="3">3 gwiazdki</option>
+                                            <option value="2">2 gwiazdki</option>
+                                            <option value="1">1 gwiazdka</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="reviewText" class="form-label small text-white-50 mb-1">Twoja recenzja</label>
+                                        <textarea id="reviewText" rows="3" class="form-control form-control-sm" placeholder="Napisz swoją opinię..." required></textarea>
+                                    </div>
+                                    <div class="col-12 pt-1">
+                                        <button type="submit" class="btn btn-alchemy-primary btn-sm rounded-pill px-4">
+                                            <i class="fa-solid fa-paper-plane me-1"></i> Dodaj opinię
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Polecane produkty -->
+        <section class="mt-5 pt-4 border-top border-secondary" aria-labelledby="recommendedProductsHeading">
+            <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-4">
+                <div>
+                    <h2 id="recommendedProductsHeading" class="h4 text-accent mb-1">Polecane produkty</h2>
+                    <p class="text-white-50 small mb-0">Uzupełnij swoją codzienną pielęgnację i stylizację paznokci</p>
+                </div>
+                <a href="sklep.html" class="btn btn-outline-light btn-sm rounded-pill px-3">Zobacz cały sklep <i class="fa-solid fa-arrow-right ms-1"></i></a>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card-alchemy">
+                        <div class="card-alchemy-img-wrap">
+                            <span class="card-badge">Bestseller</span>
+                            <img src="img/27.jpg" alt="Lakier Rose Dust">
+                        </div>
+                        <div class="card-alchemy-body">
+                            <span class="text-white-50 small mb-1">Lakiery Hybrydowe</span>
+                            <h3 class="card-alchemy-title h5"><a href="produkt.html" class="text-decoration-none text-accent">Lakier Rose Dust</a></h3>
+                            <p class="card-alchemy-text small">Pudrowy róż z subtelną poświatą o kremowym kryciu i trwałości do 28 dni.</p>
+                            <div class="card-alchemy-footer">
+                                <span class="fw-bold text-accent">35,00 PLN</span>
+                                <button type="button" class="btn btn-alchemy-primary btn-sm rounded-pill px-3" data-add-to-cart="lakier-rose-dust"><i class="fa-solid fa-cart-plus me-1"></i> Do koszyka</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card-alchemy">
+                        <div class="card-alchemy-img-wrap">
+                            <span class="card-badge">100% Vegan</span>
+                            <img src="img/25.jpg" alt="Baza Mineralna Rose Gold">
+                        </div>
+                        <div class="card-alchemy-body">
+                            <span class="text-white-50 small mb-1">Bazy i Topy</span>
+                            <h3 class="card-alchemy-title h5"><a href="produkt.html" class="text-decoration-none text-accent">Baza Mineralna Rose Gold</a></h3>
+                            <p class="card-alchemy-text small">Elastyczna baza kauczukowa z krzemionką wzmacniająca naturalną płytkę.</p>
+                            <div class="card-alchemy-footer">
+                                <span class="fw-bold text-accent">49,00 PLN</span>
+                                <button type="button" class="btn btn-alchemy-primary btn-sm rounded-pill px-3" data-add-to-cart="baza-mineralna"><i class="fa-solid fa-cart-plus me-1"></i> Do koszyka</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card-alchemy">
+                        <div class="card-alchemy-img-wrap">
+                            <span class="card-badge">Pielęgnacja</span>
+                            <img src="img/26.jpg" alt="Peeling Enzymatyczny Dłoni">
+                        </div>
+                        <div class="card-alchemy-body">
+                            <span class="text-white-50 small mb-1">Pielęgnacja Dłoni</span>
+                            <h3 class="card-alchemy-title h5"><a href="produkt.html" class="text-decoration-none text-accent">Peeling Enzymatyczny Dłoni</a></h3>
+                            <p class="card-alchemy-text small">Delikatnie wygładza naskórek i przygotowuje dłonie do rytuału nawilżającego.</p>
+                            <div class="card-alchemy-footer">
+                                <span class="fw-bold text-accent">15,00 PLN</span>
+                                <button type="button" class="btn btn-alchemy-primary btn-sm rounded-pill px-3" data-add-to-cart="peeling-enzymatyczny"><i class="fa-solid fa-cart-plus me-1"></i> Do koszyka</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- STOPKA (wstawiana przez js/footer.js) -->
+    <script src="js/footer.js"></script>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Wspólne skrypty (modal powiadomień, helpery) -->
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+
+    <script>
+    (function () {
+        const form = document.getElementById("cherryReviewForm");
+        const list = document.getElementById("cherryReviewsList");
+        const countEl = document.getElementById("reviewsCount");
+        const summaryCountEl = document.getElementById("ratingSummaryCount");
+        if (!form || !list) return;
+
+        const STORAGE_KEY = "nailchemy_oliwka_cherry_reviews_v1";
+
+        function escapeHtml(str) {
+            return String(str)
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+
+        function renderStars(rating) {
+            const num = Math.max(1, Math.min(5, parseInt(rating, 10) || 5));
+            let html = "";
+            for (let i = 1; i <= 5; i++) {
+                html += i <= num
+                    ? '<i class="fa-solid fa-star"></i>'
+                    : '<i class="fa-regular fa-star"></i>';
+            }
+            return html;
+        }
+
+        function formatPolishDate() {
+            return new Date().toLocaleDateString("pl-PL", {
+                day: "numeric",
+                month: "long",
+                year: "numeric"
+            });
+        }
+
+        function createReviewCard(review) {
+            const card = document.createElement("div");
+            card.className = "p-3 rounded-3";
+            card.style.cssText = "background: rgba(30,22,25,0.65); border: 1px solid rgba(191,142,160,0.22);";
+            card.innerHTML =
+                '<div class="d-flex justify-content-between align-items-center mb-1">' +
+                    '<strong class="text-white">' + escapeHtml(review.author) + "</strong>" +
+                    '<small class="text-white-50">' + escapeHtml(review.date) + "</small>" +
+                "</div>" +
+                '<div class="product-rating small mb-2">' + renderStars(review.rating) + "</div>" +
+                '<p class="small mb-0">' + escapeHtml(review.text) + "</p>";
+            return card;
+        }
+
+        function updateCounter() {
+            const total = list.children.length;
+            if (countEl) countEl.textContent = String(total);
+            if (summaryCountEl) summaryCountEl.textContent = String(total);
+        }
+
+        function loadSavedReviews() {
+            try {
+                const raw = localStorage.getItem(STORAGE_KEY);
+                if (!raw) return;
+                const saved = JSON.parse(raw);
+                if (!Array.isArray(saved)) return;
+                saved.forEach(function (rev) {
+                    list.prepend(createReviewCard(rev));
+                });
+                updateCounter();
+            } catch (e) {
+                console.warn("Nie udało się wczytać zapisanych opinii:", e);
+            }
+        }
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            const authorInput = document.getElementById("reviewAuthor");
+            const ratingInput = document.getElementById("reviewRating");
+            const textInput = document.getElementById("reviewText");
+            if (!authorInput || !ratingInput || !textInput) return;
+
+            const author = authorInput.value.trim();
+            const rating = ratingInput.value;
+            const text = textInput.value.trim();
+            if (!author || !text) return;
+
+            const review = {
+                author: author,
+                rating: rating,
+                text: text,
+                date: formatPolishDate()
+            };
+
+            try {
+                const raw = localStorage.getItem(STORAGE_KEY);
+                const existing = raw ? JSON.parse(raw) : [];
+                existing.push(review);
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(existing));
+            } catch (err) {
+                console.warn("Nie udało się zapisać opinii w localStorage:", err);
+            }
+
+            list.prepend(createReviewCard(review));
+            updateCounter();
+            form.reset();
+            ratingInput.value = "5";
+        });
+
+        loadSavedReviews();
+    })();
+    </script>
+</body>
+</html>

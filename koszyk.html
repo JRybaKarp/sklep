@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koszyk – Nailchemy</title>
+    <meta name="description" content="Sprawdź produkty dodane do koszyka Nailchemy i przejdź do realizacji zamówienia.">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Style całej strony (jeden wspólny plik) -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Koszyk – Nailchemy">
+    <meta property="og:description" content="Sprawdź produkty dodane do koszyka Nailchemy i przejdź do realizacji zamówienia.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&amp;fit=crop&amp;w=1200&amp;q=80">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Koszyk – Nailchemy", "description": "Sprawdź produkty dodane do koszyka Nailchemy i przejdź do realizacji zamówienia.", "publisher": {"@type": "Organization", "name": "Nailchemy Sp. z o.o."}}</script>
+</head>
+<body data-page="cart">
+
+    <!-- NAVBAR + panele Kategorie / Koszyk (wstawiane przez js/navbar.js) -->
+    <script src="js/navbar.js"></script>
+
+    <!-- ===== TREŚĆ STRONY ===== -->
+        <main class="container py-5 cart-page">
+            <h1 class="h3 text-accent mb-4"><i class="fa-solid fa-bag-shopping me-2"></i> Twój Koszyk Zakupowy</h1>
+            <div class="row g-4">
+                <div class="col-lg-8">
+                    <div class="sticky-summary-box p-4 cart-items-panel">
+                        <div class="table-responsive">
+                            <table class="table cart-table align-middle mb-0">
+                                <thead><tr><th>Produkt</th><th>Cena</th><th>Ilość</th><th>Wartość</th><th class="text-end">Akcja</th></tr></thead>
+                                <tbody id="cartPageItems"></tbody>
+                            </table>
+                        </div>
+                        <div class="mt-4 pt-3 border-top border-secondary">
+                            <label class="form-label text-accent small fw-bold">Kod rabatowy</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Wpisz kod (np. ALCHEMIA)">
+                                <button class="btn btn-outline-light" type="button" onclick="showNotification('Kod rabatowy został zastosowany!')">Zastosuj</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="sticky-summary-box cart-summary-panel">
+                        <h4 class="h5 text-accent mb-3">Podsumowanie</h4>
+                        <div class="d-flex justify-content-between mb-2 text-white-50"><span>Suma częściowa:</span><span class="text-white" id="cartPageSubtotal">0,00 PLN</span></div>
+                        <div class="d-flex justify-content-between mb-3 pb-3 border-bottom border-secondary text-white-50"><span>Szacowana dostawa:</span><span class="text-white">15,00 PLN</span></div>
+                        <div class="d-flex justify-content-between mb-4"><span class="h6 text-accent mb-0">Łącznie brutto:</span><span class="h5 text-accent fw-bold mb-0" id="cartPageTotal">15,00 PLN</span></div>
+                        <button id="cartCheckoutButton" class="btn btn-alchemy-primary cart-action-button w-100 rounded-pill py-3" onclick="location.href='zamowienie.html'">Przejdź do kasy <i class="fa-solid fa-arrow-right ms-2"></i></button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+    <!-- STOPKA (wstawiana przez js/footer.js) -->
+    <script src="js/footer.js"></script>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Wspólne skrypty (modal powiadomień, helpery) -->
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moje Konto – Nailchemy</title>
+    <meta name="description" content="Zarządzaj kontem klienta Nailchemy, danymi i zamówieniami.">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Style całej strony (jeden wspólny plik) -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Moje Konto – Nailchemy">
+    <meta property="og:description" content="Zarządzaj kontem klienta Nailchemy, danymi i zamówieniami.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&amp;fit=crop&amp;w=1200&amp;q=80">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Moje Konto – Nailchemy", "description": "Zarządzaj kontem klienta Nailchemy, danymi i zamówieniami.", "publisher": {"@type": "Organization", "name": "Nailchemy Sp. z o.o."}}</script>
+</head>
+<body data-page="account">
+
+    <!-- NAVBAR + panele Kategorie / Koszyk (wstawiane przez js/navbar.js) -->
+    <script src="js/navbar.js"></script>
+
+    <!-- ===== TREŚĆ STRONY ===== -->
+        <h1 class="visually-hidden">Moje konto</h1>
+
+    <main class="container py-5">
+            <div class="row g-4">
+                <div class="col-lg-3">
+                    <div class="account-sidebar">
+                        <div class="text-center mb-4 pb-3 border-bottom border-secondary">
+                            <div id="accountAvatarInitials" class="rounded-circle bg-secondary d-inline-flex align-items-center justify-content-center text-accent fs-3 mb-2" style="width: 70px; height: 70px; border: 2px solid var(--primary-color);">AK</div>
+                            <h6 id="accountSidebarName" class="text-accent mb-0">Anna Kowalska</h6>
+                            <small id="accountSidebarEmail" class="text-white-50">anna@example.pl</small>
+                        </div>
+                        <div class="nav flex-column nav-pills" role="tablist" aria-label="Sekcje konta">
+                            <button class="nav-link active" type="button" data-account-tab="dashboard" aria-selected="true"><i class="fa-solid fa-gauge-high me-2"></i> Pulpit</button>
+                            <button class="nav-link" type="button" data-account-tab="orders" aria-selected="false"><i class="fa-solid fa-box-archive me-2"></i> Moje zamówienia</button>
+                            <button class="nav-link" type="button" data-account-tab="addresses" aria-selected="false"><i class="fa-solid fa-location-dot me-2"></i> Adresy dostawy</button>
+                            <button class="nav-link" type="button" data-account-tab="edit-account" aria-selected="false"><i class="fa-solid fa-user-pen me-2"></i> Edycja konta</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <!-- Pulpit -->
+                    <section class="account-panel sticky-summary-box p-4" data-account-panel="dashboard">
+                        <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+                            <h3 class="h4 text-accent mb-0"><i class="fa-solid fa-gauge-high me-2"></i> Pulpit konta</h3>
+                            <span class="badge bg-secondary text-accent border border-primary px-3 py-2 rounded-pill">Status: Klub Alchemika</span>
+                        </div>
+                        <p class="text-white-50 mb-4">
+                            Witaj, <strong class="text-white" id="dashboardWelcomeName">Anna Kowalska</strong>! Z poziomu pulpitu możesz sprawdzić ostatnie zamówienia, zaktualizować adres dostawy oraz zarządzać ustawieniami swojego konta.
+                        </p>
+
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-4">
+                                <div class="dashboard-stat-card">
+                                    <div class="text-white-50 small mb-1"><i class="fa-solid fa-box-open text-primary-brand me-1"></i> Złożone zamówienia</div>
+                                    <div class="h3 text-accent fw-bold mb-0" id="dashboardOrdersCount">0</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="dashboard-stat-card">
+                                    <div class="text-white-50 small mb-1"><i class="fa-solid fa-bag-shopping text-primary-brand me-1"></i> Produkty w koszyku</div>
+                                    <div class="h3 text-accent fw-bold mb-0" id="dashboardCartCount">0</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="dashboard-stat-card">
+                                    <div class="text-white-50 small mb-1"><i class="fa-solid fa-truck-fast text-primary-brand me-1"></i> Domyślne miasto</div>
+                                    <div class="h5 text-accent fw-bold mb-0 mt-1" id="dashboardCity">Warszawa</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4 class="h6 text-accent mb-3">Szybkie skróty</h4>
+                        <div class="row g-3">
+                            <div class="col-sm-6">
+                                <button type="button" class="dashboard-shortcut-btn" data-switch-tab="orders">
+                                    <i class="fa-solid fa-box-archive text-primary-brand fs-5"></i>
+                                    <div>
+                                        <div class="fw-bold text-accent">Historia zamówień</div>
+                                        <small class="text-white-50">Sprawdź status swoich przesyłek</small>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="col-sm-6">
+                                <button type="button" class="dashboard-shortcut-btn" data-switch-tab="addresses">
+                                    <i class="fa-solid fa-location-dot text-primary-brand fs-5"></i>
+                                    <div>
+                                        <div class="fw-bold text-accent">Adres dostawy</div>
+                                        <small class="text-white-50">Zmień dane do wysyłki kurierskiej</small>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="col-sm-6">
+                                <button type="button" class="dashboard-shortcut-btn" data-switch-tab="edit-account">
+                                    <i class="fa-solid fa-user-pen text-primary-brand fs-5"></i>
+                                    <div>
+                                        <div class="fw-bold text-accent">Edycja konta</div>
+                                        <small class="text-white-50">Zmień dane profilu, hasło lub wyloguj się</small>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="col-sm-6">
+                                <a href="sklep.html" class="dashboard-shortcut-btn">
+                                    <i class="fa-solid fa-sparkles text-primary-brand fs-5"></i>
+                                    <div>
+                                        <div class="fw-bold text-accent">Przejdź do sklepu</div>
+                                        <small class="text-white-50">Odkryj nowości i bestsellery Nailchemy</small>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Moje zamówienia -->
+                    <section class="account-panel sticky-summary-box p-4" data-account-panel="orders" hidden>
+                        <h3 class="h4 text-accent mb-3"><i class="fa-solid fa-box-archive me-2"></i> Moje zamówienia</h3>
+                        <p class="text-white-50 mb-4">Historia zamówień złożonych na tym koncie.</p>
+                        <div class="table-responsive">
+                            <table class="table account-orders-table align-middle small mb-0">
+                                <thead><tr><th>Numer</th><th>Data</th><th>Kwota</th><th>Status</th><th class="text-end">Szczegóły</th></tr></thead>
+                                <tbody id="accountOrdersBody"><tr><td colspan="5" class="text-center text-white-50 py-4">Nie masz jeszcze żadnych zamówień.</td></tr></tbody>
+                            </table>
+                        </div>
+                        <div id="orderDetailsCard" class="mt-4 p-4 rounded-4" style="background: rgba(30,22,25,0.85); border: 1px solid rgba(191,142,160,0.35);" hidden>
+                            <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 pb-3 mb-3 border-bottom border-secondary">
+                                <div>
+                                    <span class="text-white-50 small d-block">Szczegóły zamówienia</span>
+                                    <h4 class="h5 text-accent mb-0" id="orderDetailNumber">#NAIL/2026/000001</h4>
+                                </div>
+                                <div class="d-flex align-items-center gap-2">
+                                    <span class="account-order-status" id="orderDetailStatus">Przyjęte</span>
+                                    <button type="button" class="btn btn-outline-light btn-sm rounded-pill" id="closeOrderDetailsBtn"><i class="fa-solid fa-xmark me-1"></i> Zamknij</button>
+                                </div>
+                            </div>
+                            <div class="row g-3 mb-3 small text-white-50">
+                                <div class="col-sm-4"><strong class="text-accent d-block">Data złożenia:</strong><span id="orderDetailDate">-</span></div>
+                                <div class="col-sm-4"><strong class="text-accent d-block">Metoda dostawy:</strong><span id="orderDetailDelivery">-</span></div>
+                                <div class="col-sm-4"><strong class="text-accent d-block">Metoda płatności:</strong><span id="orderDetailPayment">-</span></div>
+                            </div>
+                            <div id="orderDetailInvoiceBox" class="mb-3 p-3 rounded-3 small" style="background: rgba(102, 78, 86, 0.18); border: 1px solid rgba(191,142,160,0.25);" hidden>
+                                <strong class="text-accent d-block mb-1"><i class="fa-solid fa-file-invoice me-1"></i> Dane do faktury VAT:</strong>
+                                <span class="text-white-50" id="orderDetailInvoiceText"></span>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table account-orders-table align-middle small mb-3">
+                                    <thead><tr><th>Produkt</th><th class="text-center">Ilość</th><th class="text-end">Cena jedn.</th><th class="text-end">Wartość</th></tr></thead>
+                                    <tbody id="orderDetailItemsBody"></tbody>
+                                </table>
+                            </div>
+                            <div class="ms-auto" style="max-width: 320px;">
+                                <div class="d-flex justify-content-between small text-white-50 mb-1"><span>Wartość produktów:</span><strong class="text-white" id="orderDetailSubtotal">0,00 PLN</strong></div>
+                                <div class="d-flex justify-content-between small text-white-50 mb-2 pb-2 border-bottom border-secondary"><span>Koszt dostawy:</span><strong class="text-white" id="orderDetailShipping">0,00 PLN</strong></div>
+                                <div class="d-flex justify-content-between"><span class="fw-bold text-accent">Razem:</span><strong class="h6 text-accent fw-bold mb-0" id="orderDetailTotal">0,00 PLN</strong></div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Adresy dostawy -->
+                    <section class="account-panel sticky-summary-box p-4" data-account-panel="addresses" hidden>
+                        <h3 class="h4 text-accent mb-3"><i class="fa-solid fa-location-dot me-2"></i> Adresy dostawy</h3>
+                        <p class="text-white-50 mb-4">Zarządzaj zapisanym adresem dostawy.</p>
+                        <form id="accountAddressForm" class="account-address-form">
+                            <div class="row g-3">
+                                <div class="col-md-6"><label class="form-label text-white-50 small" for="addressFirstName">Imię</label><input class="form-control" id="addressFirstName" name="firstName" required value="Anna"></div>
+                                <div class="col-md-6"><label class="form-label text-white-50 small" for="addressLastName">Nazwisko</label><input class="form-control" id="addressLastName" name="lastName" required value="Kowalska"></div>
+                                <div class="col-12"><label class="form-label text-white-50 small" for="addressStreet">Ulica i numer</label><input class="form-control" id="addressStreet" name="street" required value="ul. Alchemiczna 12/4"></div>
+                                <div class="col-md-4"><label class="form-label text-white-50 small" for="addressPostal">Kod pocztowy</label><input class="form-control" id="addressPostal" name="postal" required value="00-001"></div>
+                                <div class="col-md-8"><label class="form-label text-white-50 small" for="addressCity">Miasto</label><input class="form-control" id="addressCity" name="city" required value="Warszawa"></div>
+                                <div class="col-md-6"><label class="form-label text-white-50 small" for="addressPhone">Telefon</label><input class="form-control" id="addressPhone" name="phone" required value="+48 123 456 789"></div>
+                                <div class="col-md-6"><label class="form-label text-white-50 small" for="addressEmail">E-mail</label><input class="form-control" id="addressEmail" name="email" type="email" required value="anna@example.pl"></div>
+                            </div>
+                            <button type="submit" class="btn btn-alchemy-primary account-save-button mt-4">Zapisz adres</button>
+                            <p class="text-white-50 small mt-3 mb-0" id="addressSaveMessage" aria-live="polite"></p>
+                        </form>
+                    </section>
+
+                    <!-- Edycja konta -->
+                    <section class="account-panel sticky-summary-box p-4" data-account-panel="edit-account" hidden>
+                        <h3 class="h4 text-accent mb-3"><i class="fa-solid fa-user-pen me-2"></i> Edycja konta</h3>
+                        <p class="text-white-50 mb-4">Zaktualizuj swoje dane osobowe, adres e-mail lub hasło.</p>
+                        <form id="accountEditForm">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label text-white-50 small" for="editFirstName">Imię</label>
+                                    <input class="form-control" id="editFirstName" name="firstName" required value="Anna">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label text-white-50 small" for="editLastName">Nazwisko</label>
+                                    <input class="form-control" id="editLastName" name="lastName" required value="Kowalska">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label text-white-50 small" for="editDisplayName">Nazwa wyświetlana</label>
+                                    <input class="form-control" id="editDisplayName" name="displayName" required value="Anna Kowalska">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label text-white-50 small" for="editEmail">Adres e-mail</label>
+                                    <input class="form-control" id="editEmail" name="email" type="email" required value="anna@example.pl">
+                                </div>
+                            </div>
+
+                            <hr class="my-4 border-secondary">
+                            <h4 class="h6 text-accent mb-3">Zmiana hasła <span class="text-white-50 fw-normal">(opcjonalnie)</span></h4>
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <label class="form-label text-white-50 small" for="currentPassword">Aktualne hasło</label>
+                                    <input class="form-control" id="currentPassword" name="currentPassword" type="password" placeholder="Pozostaw puste, aby nie zmieniać">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label text-white-50 small" for="newPassword">Nowe hasło</label>
+                                    <input class="form-control" id="newPassword" name="newPassword" type="password" placeholder="Minimum 8 znaków">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label text-white-50 small" for="confirmPassword">Potwierdź nowe hasło</label>
+                                    <input class="form-control" id="confirmPassword" name="confirmPassword" type="password" placeholder="Powtórz nowe hasło">
+                                </div>
+                            </div>
+
+                            <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mt-4 pt-3 border-top border-secondary">
+                                <button type="submit" class="btn btn-alchemy-primary rounded-pill px-4">Zapisz zmiany</button>
+                                <button type="button" id="accountLogoutBtn" class="btn btn-outline-danger rounded-pill px-4">
+                                    <i class="fa-solid fa-right-from-bracket me-2"></i> Wyloguj się
+                                </button>
+                            </div>
+                            <p class="text-accent small mt-3 mb-0" id="accountEditMessage" aria-live="polite"></p>
+                        </form>
+                    </section>
+                </div>
+            </div>
+        </main>
+
+    <!-- STOPKA (wstawiana przez js/footer.js) -->
+    <script src="js/footer.js"></script>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Wspólne skrypty (modal powiadomień, helpery) -->
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/account.js"></script>
+</body>
+</html>
